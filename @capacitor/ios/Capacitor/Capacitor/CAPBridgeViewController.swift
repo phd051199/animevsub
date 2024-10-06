@@ -26,6 +26,7 @@ import Cordova
         }
         return false
     }()
+    public var statusBarBackgroundView: UIView!
 
     override public final func loadView() {
         // load the configuration and set the logging flag
@@ -59,8 +60,16 @@ import Cordova
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        setupStatusBarBackground()
+        setNeedsStatusBarAppearanceUpdate()
         self.becomeFirstResponder()
         loadWebView()
+    }
+
+    private func setupStatusBarBackground() {
+        statusBarBackgroundView = UIView(frame: UIApplication.shared.statusBarFrame)
+        statusBarBackgroundView.backgroundColor = UIColor(red: 18/255, green: 18/255, blue: 18/255, alpha: 1.0)
+        view.addSubview(statusBarBackgroundView)
     }
 
     override open func canPerformUnwindSegueAction(_ action: Selector, from fromViewController: UIViewController, withSender sender: Any) -> Bool {
@@ -169,20 +178,8 @@ import Cordova
     // MARK: - System Integration
 
     open func setStatusBarDefaults() {
-        if let plist = Bundle.main.infoDictionary {
-            if let statusBarHidden = plist["UIStatusBarHidden"] as? Bool {
-                if statusBarHidden {
-                    self.isStatusBarVisible = false
-                }
-            }
-            if let statusBarStyle = plist["UIStatusBarStyle"] as? String {
-                if statusBarStyle == "UIStatusBarStyleDarkContent" {
-                    self.statusBarStyle = .darkContent
-                } else if statusBarStyle != "UIStatusBarStyleDefault" {
-                    self.statusBarStyle = .lightContent
-                }
-            }
-        }
+      self.isStatusBarVisible = true
+      self.statusBarStyle = .lightContent
     }
 
     open func setScreenOrientationDefaults() {
@@ -210,11 +207,15 @@ import Cordova
     }
 
     override open var prefersStatusBarHidden: Bool {
-        return !isStatusBarVisible
+        return false
     }
 
     override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
+        return .lightContent
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        statusBarBackgroundView.frame = UIApplication.shared.statusBarFrame
     }
 
     override open var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {

@@ -13,9 +13,9 @@
   </header>
 
   <q-list class="pt-[47px]">
-    <q-item clickable v-ripple to="/tai-khoan/settings/player">
+    <q-item clickable v-ripple to="/tai-khoan/settings/host">
       <q-item-section>
-        <q-item-label>{{ t("cai-dat-phat") }}</q-item-label>
+        <q-item-label>{{ t("cai-dat-host") }}</q-item-label>
       </q-item-section>
     </q-item>
     <q-item

@@ -59,7 +59,7 @@
           />
           {{ t("tim-kiem") }}
         </q-route-tab>
-        <q-route-tab
+        <!-- <q-route-tab
           replace
           exact-active-class="tab-active"
           class="pt-1"
@@ -78,7 +78,7 @@
             class="mb-1 filled"
           />
           {{ t("tin-tuc") }}
-        </q-route-tab>
+        </q-route-tab> -->
         <q-route-tab
           replace
           exact-active-class="tab-active"

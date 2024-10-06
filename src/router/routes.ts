@@ -181,6 +181,10 @@ const routes: RouteRecordRaw[] = [
             path: "language",
             component: () => import("pages/tai-khoan/settings/language.vue"),
           },
+          {
+            path: "host",
+            component: () => import("pages/tai-khoan/settings/host.vue"),
+          },
         ],
         meta: {
           screen: {
