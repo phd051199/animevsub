@@ -1,6 +1,6 @@
 {
   "name": "git.shin.animevsub",
-  "version": "1.8.42",
+  "version": "1.8.49",
   "description": "Watch Anime without advertising, free, private.",
   "author": "Tachibana Shin <45375496+tachibana-shin@users.noreply.github.com>",
   "private": true,
@@ -24,7 +24,6 @@
     "@capacitor/status-bar": "^6.0.0",
     "@capawesome/capacitor-screen-orientation": "^6.0.1",
     "@hugotomazi/capacitor-navigation-bar": "^4.0.1",
-    "@jcesarmobile/ssl-skip": "^0.4.0",
     "cordova-plugin-screen-orientation": "^3.0.4"
   }
 }

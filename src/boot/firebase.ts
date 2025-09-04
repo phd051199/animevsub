@@ -7,26 +7,26 @@ import {
   setUserId as setUserIdPWA,
   setUserProperties as setUserPropertiesPWA,
 } from "@firebase/analytics"
-import { initializeApp } from "@firebase/app"
+// import { initializeApp } from "@firebase/app"
 import { isNative } from "src/constants"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyB4ouSBjkMUnV6cN2XVlc5PxJtf6gVsRkQ",
-  authDomain: "animevsub-history-app.firebaseapp.com",
-  projectId: "animevsub-history-app",
-  storageBucket: "animevsub-history-app.appspot.com",
-  messagingSenderId: "12658633187",
-  appId: "1:12658633187:web:56cf1588279277f3a698d6",
-  measurementId: "G-F2KJ27SHYK",
-}
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB4ouSBjkMUnV6cN2XVlc5PxJtf6gVsRkQ",
+//   authDomain: "animevsub-history-app.firebaseapp.com",
+//   projectId: "animevsub-history-app",
+//   storageBucket: "animevsub-history-app.appspot.com",
+//   messagingSenderId: "12658633187",
+//   appId: "1:12658633187:web:56cf1588279277f3a698d6",
+//   measurementId: "G-F2KJ27SHYK",
+// }
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig)
+// const app = initializeApp(firebaseConfig)
 
-export { app }
+// export { app }
 
 const analytics = isNative ? null : getAnalytics()
 

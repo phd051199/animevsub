@@ -19,6 +19,7 @@ export const useSettingsStore = defineStore("settings", {
     },
     locale: getNavigatorLanguage(),
     infinityScroll: true,
+    hostUrl: import.meta.env.HOST_CURL || HOST_CURL,
   }),
   persist: true,
 })

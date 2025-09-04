@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full overflow-hidden fixed top-0 left-0 z-200 bg-[#000]"
+    class="w-full overflow-hidden fixed top-0 left-0 z-200 bg-[#000] pt-safe-area"
     :class="{
       'h-full': IS_IOS && artFullscreen,
     }"
@@ -2489,15 +2489,15 @@ const leftSkt = computed(() => {
     width: 100%;
     z-index: 2;
     padding: 8px 16px;
-    @media (orientation: landscape) {
-      padding-top: 32px !important;
-    }
     display: flex;
     align-items: center;
     justify-content: space-between;
     opacity: 1;
     visibility: visible;
     transition: all 0.2s ease-in-out;
+    @media (orientation: landscape) {
+      padding-top: 32px !important;
+    }
   }
   &.currenting-time {
     .toolbar-top,
@@ -2524,9 +2524,6 @@ const leftSkt = computed(() => {
     }
     display: flex;
     flex-direction: column-reverse;
-    @media (orientation: landscape) {
-      padding-bottom: 32px !important;
-    }
     @apply h-min-[100px] z-199;
     background: {
       image: linear-gradient(to top, #000, #0006, #0000);
@@ -2540,13 +2537,16 @@ const leftSkt = computed(() => {
     left: 0;
     right: 0;
     // background-color: red;
+    @media (orientation: landscape) {
+      padding-bottom: 32px !important;
+    }
 
     .art-more-controls {
       display: none;
+      margin-top: 16px;
       @media (orientation: landscape) {
         display: flex;
       }
-      margin-top: 16px;
     }
 
     .art-control-progress {
@@ -2563,11 +2563,11 @@ const leftSkt = computed(() => {
         align-items: center;
         position: relative;
         height: 2px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
         @media (orientation: landscape) {
           height: 4px;
         }
-        width: 100%;
-        background: rgba(255, 255, 255, 0.2);
 
         .art-progress-loaded {
           position: absolute;
